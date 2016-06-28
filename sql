@@ -1,0 +1,1 @@
+SELECT (SELECT sum(jumlah) from inventori where kondisi ='Baik' AND YEAR(tanggal)<='2013')-(SELECT sum(jumlah) from inventori where kondisi ='Rusak' AND YEAR(tanggal)<='2013')-(SELECT sum(jumlah) from inventori where kondisi ='Kurang Baik' AND YEAR(tanggal)<='2013') jumlah, id_barang FROM inventori where YEAR(tanggal)<='2013' group by id_barang
